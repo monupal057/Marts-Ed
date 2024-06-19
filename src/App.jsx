@@ -3,6 +3,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './pages/Home'
 import Cart from './pages/Cart';
+import Login from "./pages/Login";
 import { productsData } from "./api/Api";
 import Product from "./components/Product";
 
@@ -36,6 +37,10 @@ import Product from "./components/Product";
         path: "/cart",
         element: <Cart />,
       },
+      {
+        path: "/cart",
+        element: <Login />
+      }
      
     ],
   },
