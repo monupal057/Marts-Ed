@@ -38,8 +38,8 @@ import Product from "./components/Product";
         element: <Cart />,
       },
       {
-        path: "/cart",
-        element: <Login />
+        path: "/login",
+        element: <Login />,
       }
      
     ],

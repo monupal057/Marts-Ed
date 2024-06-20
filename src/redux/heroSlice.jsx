@@ -1,6 +1,5 @@
 
 
-
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   productData: [],
@@ -42,6 +41,12 @@ export const heroSlice = createSlice({
         item.quantity--;
       }
     },
+    addUser: (state, action) => {
+      state.userInfo = action.payload;
+    },
+    removeUser: (state) => {
+      state.userInfo = null;
+    },
     deleteItem: 
     (state, action) => {
       state.productData = state.productData.filter(
@@ -52,8 +57,9 @@ export const heroSlice = createSlice({
       state.productData = [];
     }
   }
-
+ 
 })
+
 
 export const {
   addToCart,

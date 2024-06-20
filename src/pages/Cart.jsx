@@ -7,7 +7,10 @@ import { useEffect, useState } from "react";
 
 const Cart = () => {
    const productData = useSelector((state) => state.hero.productData);
+   const userInfo = useSelector((state) => state.hero.userInfo);
    const [totaLAmt, setTotLaAmt] = useState("");
+   const [payNow, setPayNow] = useState(false);
+   
 
    useEffect(()=> {
     let price = 0;
@@ -17,6 +20,13 @@ const Cart = () => {
     });
     setTotLaAmt(price.toFixed(2));
    },[productData])
+   const handleCheckout=()=>{
+    if(userInfo){
+     setPayNow(true)
+    } else {
+      toast.error("please sign im to Checkout")
+    }
+   }
   //console.log(productData);
   return (
     <div>
@@ -44,7 +54,7 @@ const Cart = () => {
           <p className=" font-titleFont font-semibold flex justify-between mt-6">
             Total <span className="text-xl font-bold">$ {totaLAmt}</span>
           </p>
-          <button className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300">
+          <button onClick={handleCheckout} className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300">
             proceed to checkout
             </button>
         </div>
