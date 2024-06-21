@@ -3,6 +3,7 @@ import { ToastContainer,toast } from "react-toastify";
 import CartItem from "../components/CartItem";
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react";
+import StripeCheckout from "react-stripe-checkout";
 
 
 const Cart = () => {
@@ -58,6 +59,20 @@ const Cart = () => {
             proceed to checkout
             </button>
         </div>
+        {/* { */}
+          {/* payNow &&  */}
+          {/* <div> */}
+             {/* <StripeCheckout */}
+                  {/* stripeKey="pk_test_51LXpmzBcfNkwYgIPXd3qq3e2m5JY0pvhaNZG7KSCklYpVyTCVGQATRH8tTWxDSYOnRTT5gxOjRVpUZmOWUEHnTxD00uxobBHkc" */}
+                  {/* name="UrbanAura" */}
+                  {/* amount={totalAmt * 100} */}
+                  {/* label="Pay to UrbanAura" */}
+                  {/* description={`Your Payment amount is $${totalAmt}`} */}
+                  {/* token={payment} */}
+                  {/* email={userInfo.email} */}
+                {/* /> */}
+            {/* </div> */}
+        {/* } */}
        </div>
        <ToastContainer 
        position="top-left"

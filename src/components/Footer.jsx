@@ -35,7 +35,7 @@ const Footer = () => {
             <p>Mr. Monu Pal</p>
             <p>Mobile: 00991 0867168</p>
             <p>Phone: 00987 1467341</p>
-            <p>e-mail: evolve@gmail.com</p>
+            <p>e-mail: urbanAura@gmail.com</p>
           </div>
         </div>
         <div>

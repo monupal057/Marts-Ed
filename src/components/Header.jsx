@@ -8,11 +8,11 @@ function Header() {
   const userInfo = useSelector((state) => state.hero.userInfo);
 console.log(userInfo)
   return (
-    <div className="w-full h-20 bg-white border-b-[1px] border-b-gray-800 font-titleFont sticky top-0 z-50">
+    <div className="w-full h-20 bg-white border-b-[1px] border-b-gray-800 font-titleFont fixed top-0 z-50">
       <div className="max-w-screen-xl h-full mx-auto flex items-center justify-between">
         <Link to="/">
         <div>
-          <img className="w-20" src={logowhite} alt="logo" />
+          <img className="w-22 h-10" src={logowhite} alt="logo" />
         </div>
         </Link>
         <div className="flex items-center gap-8">
@@ -39,7 +39,8 @@ console.log(userInfo)
             userInfo.image
             : "https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           }
-           />    
+           />
+           {/* {console.log(userInfo.image)}     */}
              </Link>
              {userInfo && (
             <p className="text-base font-titleFont font-semibold underline underline-offset-2">
