@@ -6,10 +6,11 @@ import { useEffect, useState } from "react";
 import StripeCheckout from "react-stripe-checkout";
 
 
+
 const Cart = () => {
    const productData = useSelector((state) => state.hero.productData);
    const userInfo = useSelector((state) => state.hero.userInfo);
-   const [totaLAmt, setTotLaAmt] = useState("");
+   const [totalAmt, setTotalAmt] = useState("");
    const [payNow, setPayNow] = useState(false);
    
 
@@ -19,7 +20,7 @@ const Cart = () => {
       price += item.price * item.quantity;
       return price
     });
-    setTotLaAmt(price.toFixed(2));
+    setTotalAmt(price.toFixed(2));
    },[productData])
    const handleCheckout=()=>{
     if(userInfo){
@@ -43,7 +44,7 @@ const Cart = () => {
             <h2 className="text-2xl font-medium">cart totals</h2>
             <p className="flex items-center gap-4 text-base">
               subtotal{" "}
-              <span className="font-titleFont font-bold text-lg">$ {totaLAmt}</span>
+              <span className="font-titleFont font-bold text-lg">$ {totalAmt}</span>
             </p>
             <p className="flex items-start gap-4 text-base"> 
             Shipping{" "} 
@@ -53,26 +54,26 @@ const Cart = () => {
             </p>
           </div>
           <p className=" font-titleFont font-semibold flex justify-between mt-6">
-            Total <span className="text-xl font-bold">$ {totaLAmt}</span>
+            Total <span className="text-xl font-bold">$ {totalAmt}</span>
           </p>
           <button onClick={handleCheckout} className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300">
             proceed to checkout
             </button>
         </div>
-        {/* { */}
-          {/* payNow &&  */}
-          {/* <div> */}
-             {/* <StripeCheckout */}
-                  {/* stripeKey="pk_test_51LXpmzBcfNkwYgIPXd3qq3e2m5JY0pvhaNZG7KSCklYpVyTCVGQATRH8tTWxDSYOnRTT5gxOjRVpUZmOWUEHnTxD00uxobBHkc" */}
-                  {/* name="UrbanAura" */}
-                  {/* amount={totalAmt * 100} */}
-                  {/* label="Pay to UrbanAura" */}
-                  {/* description={`Your Payment amount is $${totalAmt}`} */}
-                  {/* token={payment} */}
-                  {/* email={userInfo.email} */}
-                {/* /> */}
-            {/* </div> */}
-        {/* } */}
+        {
+          payNow && 
+          <div>
+             <StripeCheckout
+                  stripeKey="pk_test_51PU1buP6tvTsNGefzKDgMerawrF3lfJ61gXXDK9UEyf9sUp4BE2uV0Mc8KFSdqTMRx4CY4xR23ptM3wE5nNcFnpw00VAAotA3P"
+                  name="UrbanAura"
+                  amount={totalAmt * 100}
+                  label="Pay to EvolveMart"
+                  description={`Your Payment amount is $${totalAmt}`}
+                  //token={payment}
+                  email={userInfo.email}
+                />
+            </div>
+        }
        </div>
        <ToastContainer 
        position="top-left"
