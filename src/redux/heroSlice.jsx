@@ -1,6 +1,80 @@
 
 
+// // import { createSlice } from "@reduxjs/toolkit";
+// // const initialState = {
+// //   productData: [],
+// //   userInfo: null,
+// // };
+
+// // export const heroSlice = createSlice({
+// //   name: "hero",
+// //   initialState,
+// //   reducers: {
+// //     addToCart: (state, action) => {
+// //       const item = state.productData.find(
+// //         (item)=>item._id ===action.payload._id
+// //       );
+
+// //       if (item) {
+// //         item.quantity += action.payload.quantity;
+// //       } else {
+// //         state.productData.push(action.payload);
+// //       }
+// //     },
+   
+
+// //     increamentQuantity: (state, action) => {
+// //       const item = state.productData.find(
+// //         (item) => item._id === action.payload._id
+// //       );
+// //       if (item) {
+// //         item.quantity++;
+// //       }
+// //     },
+// //     decrementQuantity: (state, action) => {
+// //       const item = state.productData.find(
+// //         (item) => item._id === action.payload._id
+// //       );
+// //       if (item.quantity === 1) {
+// //         item.quantity = 1;
+// //       } else {
+// //         item.quantity--;
+// //       }
+// //     },
+// //     addUser: (state, action) => {
+// //       state.userInfo = action.payload;
+// //     },
+// //     removeUser: (state) => {
+// //       state.userInfo = null;
+// //     },
+// //     deleteItem: 
+// //     (state, action) => {
+// //       state.productData = state.productData.filter(
+// //         (item) => item._id !== action.payload
+// //       );
+// //     },
+// //     resetCart: (state) => {
+// //       state.productData = [];
+// //     }
+// //   }
+ 
+// // })
+
+
+// // export const {
+// //   addToCart,
+// //   deleteItem,
+// //   resetCart,
+// //   incrementQuantity,
+// //   decrementQuantity,
+// //   addUser,
+// //   removeUser,
+// // } = heroSlice.actions;
+
+// // export default heroSlice.reducer;
+
 // import { createSlice } from "@reduxjs/toolkit";
+
 // const initialState = {
 //   productData: [],
 //   userInfo: null,
@@ -11,34 +85,25 @@
 //   initialState,
 //   reducers: {
 //     addToCart: (state, action) => {
-//       const item = state.productData.find(
-//         (item)=>item._id ===action.payload._id
-//       );
-
+//       const item = state.productData.find(item => item._id === action.payload._id);
 //       if (item) {
 //         item.quantity += action.payload.quantity;
 //       } else {
 //         state.productData.push(action.payload);
 //       }
 //     },
-   
-
-//     increamentQuantity: (state, action) => {
-//       const item = state.productData.find(
-//         (item) => item._id === action.payload._id
-//       );
+//     incrementQuantity: (state, action) => {
+//       const item = state.productData.find(item => item._id === action.payload);
 //       if (item) {
 //         item.quantity++;
 //       }
 //     },
 //     decrementQuantity: (state, action) => {
-//       const item = state.productData.find(
-//         (item) => item._id === action.payload._id
-//       );
-//       if (item.quantity === 1) {
-//         item.quantity = 1;
-//       } else {
-//         item.quantity--;
+//       const item = state.productData.find(item => item._id === action.payload);
+//       if (item) {
+//         if (item.quantity > 1) {
+//           item.quantity--;
+//         }
 //       }
 //     },
 //     addUser: (state, action) => {
@@ -47,19 +112,14 @@
 //     removeUser: (state) => {
 //       state.userInfo = null;
 //     },
-//     deleteItem: 
-//     (state, action) => {
-//       state.productData = state.productData.filter(
-//         (item) => item._id !== action.payload
-//       );
+//     deleteItem: (state, action) => {
+//       state.productData = state.productData.filter(item => item._id !== action.payload);
 //     },
 //     resetCart: (state) => {
 //       state.productData = [];
 //     }
 //   }
- 
-// })
-
+// });
 
 // export const {
 //   addToCart,
@@ -73,6 +133,7 @@
 
 // export default heroSlice.reducer;
 
+
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -85,25 +146,27 @@ export const heroSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      const item = state.productData.find(item => item._id === action.payload._id);
-      if (item) {
-        item.quantity += action.payload.quantity;
+      const { _id, quantity } = action.payload;
+      const existingItem = state.productData.find(item => item._id === _id);
+
+      if (existingItem) {
+        existingItem.quantity += quantity;
       } else {
         state.productData.push(action.payload);
       }
     },
     incrementQuantity: (state, action) => {
-      const item = state.productData.find(item => item._id === action.payload);
+      const { _id } = action.payload;
+      const item = state.productData.find(item => item._id === _id);
       if (item) {
         item.quantity++;
       }
     },
     decrementQuantity: (state, action) => {
-      const item = state.productData.find(item => item._id === action.payload);
-      if (item) {
-        if (item.quantity > 1) {
-          item.quantity--;
-        }
+      const { _id } = action.payload;
+      const item = state.productData.find(item => item._id === _id);
+      if (item && item.quantity > 1) {
+        item.quantity--;
       }
     },
     addUser: (state, action) => {
@@ -117,8 +180,8 @@ export const heroSlice = createSlice({
     },
     resetCart: (state) => {
       state.productData = [];
-    }
-  }
+    },
+  },
 });
 
 export const {
