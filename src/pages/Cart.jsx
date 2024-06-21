@@ -21,7 +21,7 @@ const Cart = () => {
       return price
     });
     setTotalAmt(price.toFixed(2));
-   },[productData])
+   }, [productData])
    const handleCheckout=()=>{
     if(userInfo){
      setPayNow(true)
@@ -49,7 +49,8 @@ const Cart = () => {
             <p className="flex items-start gap-4 text-base"> 
             Shipping{" "} 
             <span>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, atque?
+              {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, atque? */}
+              Free Shipping 
             </span>
             </p>
           </div>
@@ -62,10 +63,10 @@ const Cart = () => {
         </div>
         {
           payNow && 
-          <div>
+          <div className="w-full mt-6 flex items-center justify-center" >
              <StripeCheckout
                   stripeKey="pk_test_51PU1buP6tvTsNGefzKDgMerawrF3lfJ61gXXDK9UEyf9sUp4BE2uV0Mc8KFSdqTMRx4CY4xR23ptM3wE5nNcFnpw00VAAotA3P"
-                  name="UrbanAura"
+                  name="EvolveMart"
                   amount={totalAmt * 100}
                   label="Pay to EvolveMart"
                   description={`Your Payment amount is $${totalAmt}`}
