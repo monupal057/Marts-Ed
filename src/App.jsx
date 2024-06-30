@@ -4,6 +4,9 @@ import Header from './components/Header';
 import Home from './pages/Home'
 import Cart from './pages/Cart';
 import Login from "./pages/Login";
+import Page from "./pages/Page";  
+import Blog from "./pages/Blog";  
+import Shop from "./pages/Shop";  
 import { productsData } from "./api/Api";
 import Product from "./components/Product";
 
@@ -40,6 +43,18 @@ import Product from "./components/Product";
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/page",
+        element: <Page />,  // Add these routes
+      },
+      {
+        path: "/blog",
+        element: <Blog />,  // Add these routes
+      },
+      {
+        path: "/shop",
+        element: <Shop />,  // Add these routes
       }
      
     ],
