@@ -132,7 +132,7 @@ function Header() {
               <Link to="/pages">Pages</Link>
             </li> */}
             <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
-              <Link to="/shop">Shop</Link>
+              <Link to="/contact">Contact</Link>
             </li>
             {/* <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
               <Link to="/element">Element</Link>
@@ -163,7 +163,7 @@ function Header() {
               <Link to="/pages">Pages</Link>
             </li> */}
             <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
-              <Link to="/shop">Shop</Link>
+              <Link to="/contact">Contact</Link>
             </li>
             {/* <li className="text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300">
               <Link to="/element">Element</Link>
