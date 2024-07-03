@@ -99,11 +99,9 @@
 
 // export default Header;
 
-
-
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { cartImg, logowhite } from "../assets/index";
 
@@ -111,7 +109,11 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const productData = useSelector((state) => state.hero.productData);
   const userInfo = useSelector((state) => state.hero.userInfo);
-  console.log(userInfo);
+
+  //Debugging the userInfo object
+  useEffect(() => {
+    console.log("UserInfo from Redux: ", userInfo);
+  }, [userInfo]);
 
   return (
     <div className="w-full h-20 mt-5 bg-white border-b-[1px] border-b-gray-800 font-titleFont sticky top-0 z-50">
@@ -182,10 +184,11 @@ function Header() {
             <img
               className="w-8 h-8 rounded-full"
               src={
-                userInfo
+                userInfo && userInfo.image
                   ? userInfo.image
                   : "https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               }
+              alt="User"
             />
           </Link>
           {userInfo && (
