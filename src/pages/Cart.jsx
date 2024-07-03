@@ -123,7 +123,7 @@ const Cart = () => {
 
   //console.log(productData);
   return (
-    <div  className="flex sm:flex-col">
+    <div>
       <img
         className="w-full h-60 object-cover"
         src="https://images.pexels.com/photos/1435752/pexels-photo-1435752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
