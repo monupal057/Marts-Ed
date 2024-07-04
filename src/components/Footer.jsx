@@ -10,14 +10,13 @@
 // import { MdLocationOn } from "react-icons/md";
 // import { BsPersonFill, BsPaypal } from "react-icons/bs";
 
-
-// import { logoblack,paymentLogo } from "../assets";
+// import { logoblack, paymentLogo } from "../assets";
 
 // const Footer = () => {
 //   return (
 //     <div className="bg-yellow-900 text-[#949494] py-20 font-titleFont">
-//        <div className="max-w-screen-xl mx-auto grid grid-cols-4">
-//         <div className="flex flex-col gap-7">
+//       <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+//         <div className="flex flex-col gap-7 items-center md:items-start">
 //           <img className="w-32" src={logoblack} alt="logoblack" />
 //           <p className="text-white text-sm tracking-wide">© EV.com</p>
 //           <img className="w-56" src={paymentLogo} alt="paymentLogo" />
@@ -67,7 +66,7 @@
 //             </p>
 //           </div>
 //         </div>
-//         <div className="flex flex-col justify-center">
+//         <div className="flex flex-col justify-center items-center md:items-start">
 //           <input
 //             className="bg-transparent border px-4 py-2 text-sm"
 //             type="text"
@@ -78,13 +77,11 @@
 //           </button>
 //         </div>
 //       </div> 
-//       </div>
-    
+//     </div>
 //   );
 // };
 
 // export default Footer;
-
 
 
 import { ImGithub } from "react-icons/im";
@@ -104,7 +101,7 @@ const Footer = () => {
   return (
     <div className="bg-yellow-900 text-[#949494] py-20 font-titleFont">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        <div className="flex flex-col gap-7 items-center md:items-start">
+        <div className="flex flex-col gap-7 items-center md:items-start text-center md:text-left">
           <img className="w-32" src={logoblack} alt="logoblack" />
           <p className="text-white text-sm tracking-wide">© EV.com</p>
           <img className="w-56" src={paymentLogo} alt="paymentLogo" />
@@ -116,8 +113,8 @@ const Footer = () => {
             <FaInstagram className="hover:text-white duration-300 cursor-pointer" />
           </div>
         </div>
-        <div>
-          <h2 className="text-2xl font-semibold text-white mb-4">locate us</h2>
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl font-semibold text-white mb-4">Locate Us</h2>
           <div className="text-base flex flex-col gap-2">
             <p>Mr. Monu Pal</p>
             <p>Mobile: 00991 0867168</p>
@@ -125,36 +122,36 @@ const Footer = () => {
             <p>e-mail: EvolveMart@gmail.com</p>
           </div>
         </div>
-        <div>
-          <h2 className="text-2xl font-semibold text-white mb-4">profile</h2>
+        <div className="text-center md:text-left">
+          <h2 className="text-2xl font-semibold text-white mb-4">Profile</h2>
           <div className="text-base flex flex-col gap-2">
-            <p className="flex items-center gap-3 hover:text-white duration-300 cursor-pointer">
+            <p className="flex items-center justify-center md:justify-start gap-3 hover:text-white duration-300 cursor-pointer">
               <span className="text-lg">
                 <BsPersonFill />
               </span>
-              my account
+              My Account
             </p>
-            <p className="flex items-center gap-3 hover:text-white duration-300 cursor-pointer">
+            <p className="flex items-center justify-center md:justify-start gap-3 hover:text-white duration-300 cursor-pointer">
               <span className="text-lg">
                 <BsPaypal />
               </span>
-              checkout
+              Checkout
             </p>
-            <p className="flex items-center gap-3 hover:text-white duration-300 cursor-pointer">
+            <p className="flex items-center justify-center md:justify-start gap-3 hover:text-white duration-300 cursor-pointer">
               <span className="text-lg">
                 <FaHome />
               </span>
-              order tracking
+              Order Tracking
             </p>
-            <p className="flex items-center gap-3 hover:text-white duration-300 cursor-pointer">
+            <p className="flex items-center justify-center md:justify-start gap-3 hover:text-white duration-300 cursor-pointer">
               <span className="text-lg">
                 <MdLocationOn />
               </span>
-              help & support
+              Help & Support
             </p>
           </div>
         </div>
-        <div className="flex flex-col justify-center items-center md:items-start">
+        <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left">
           <input
             className="bg-transparent border px-4 py-2 text-sm"
             type="text"
